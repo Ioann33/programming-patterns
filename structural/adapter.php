@@ -27,12 +27,12 @@ class OutsourceDeveloper implements OutsourceWorker
     }
 }
 
-class OutsourceDeveloperAdapter implements NativeWorker
+class OutsourceWorkerAdapter implements NativeWorker
 {
 
-    private OutsourceDeveloper $outsourceDeveloper;
+    private OutsourceWorker $outsourceDeveloper;
 
-    public function __construct(OutsourceDeveloper $outsourceDeveloper)
+    public function __construct(OutsourceWorker $outsourceDeveloper)
     {
         $this->outsourceDeveloper = $outsourceDeveloper;
     }
@@ -45,7 +45,7 @@ class OutsourceDeveloperAdapter implements NativeWorker
 
 $nativeDeveloperSalary = new NativeDeveloper();
 $outsourceDeveloperSalary = new OutsourceDeveloper();
-$outsourceDeveloperSalaryAdapter = new OutsourceDeveloperAdapter($outsourceDeveloperSalary);
+$outsourceDeveloperSalaryAdapter = new OutsourceWorkerAdapter($outsourceDeveloperSalary);
 
 var_dump($nativeDeveloperSalary->countSalary());
 var_dump($outsourceDeveloperSalaryAdapter->countSalary());
