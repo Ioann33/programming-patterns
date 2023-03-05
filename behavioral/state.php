@@ -34,7 +34,7 @@ class Task
         return $self;
     }
 
-    public function proceedToNext()
+    public function proceedToNext(): void
     {
         $this->state->toNext($this);
     }
